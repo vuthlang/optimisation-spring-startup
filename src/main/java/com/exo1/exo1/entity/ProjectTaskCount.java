@@ -2,19 +2,21 @@ package com.exo1.exo1.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Entity
 @Table(name = "project_task_count")
-@Getter
-@Setter
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProjectTaskCountView {
+public class ProjectTaskCount {
     @Id
     private Long projectId;
+
+    @Column(name = "project_name")
     private String projectName;
+
+    @Column(name = "task_count")
     private Long taskCount;
 }
